@@ -1,27 +1,23 @@
-# VncClient
+# VNC Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
+Client VNC simples feito em angular. Utiliza as bibliotecas noVNC e websockify para realizar um acesso remoto.
 
-## Development server
+## Utilização
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Clonar o projeto e instalar as dependências
+`git clone https://github.com/FelipeFinger/vnc-client.git`  
+`cd vnc-client`  
+`npm install`  
 
-## Code scaffolding
+### Ajustar configurações
+Ajustar a senha do VNC na const password, arquivo `\src\app\app-routing.module.ts`.  
+Ajustar o IP e porta da máquina que deseja realizar o acesso na const target, arquivo `\src\assets\websockify.js`.  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Executar o servidor websockify
+`cd \src\assets`  
+`node websockify.js`
 
-## Build
+### Executar o projeto angular
+`ng serve`  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Navegar até `http://localhost:4200/`
